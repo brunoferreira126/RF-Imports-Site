@@ -1,0 +1,687 @@
+/* Reset e Configurações Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #111;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+   
+}
+
+/* Cabeçalho */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #111;
+    width: 100%;
+    height: 150px; /* Define explicitamente a altura do header */
+    z-index: 1000;
+}
+
+header .logo img {
+    width: 120px;
+}
+header a{
+    margin-right: 60px;
+}
+
+
+nav ul {
+    display: flex;
+    list-style: none;
+    transition: transform 0.3s ease;
+    gap: 20px;
+}
+nav ul.hidden {
+    transform: translateX(-100%);
+    display: none;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #d99837;
+}
+
+#nav-listnav ul li a.active {
+    color: #d99837;
+    font-weight: bold;
+}
+
+#menu-pequeno{
+    display: none;
+  
+  }
+
+  #menu-toggle{
+    display: none;
+  }
+
+
+
+.cta-whatsapp {
+    background-color: #25d366;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Banner */
+.banner {
+    height: calc(100vh - 100px); /* Subtraia a altura do header do viewport */
+    margin-top: 250px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+
+}
+
+.banner h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.banner p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.banner img {
+    width: 60%; /* Adapta-se à largura do container */
+    max-width: 800px; /* Define um tamanho máximo */
+    height: auto; /* Mantém a proporção da imagem */
+    object-fit: contain; /* Garante que a imagem não será cortada */
+    border-radius: 10px; /* Opcional: arredonda os cantos da imagem */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.banner img:hover {
+    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Sombra suave */
+}
+
+.cta {
+    background-color: #d99837;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.cta:hover {
+    background-color: #b6792b;
+    transform: scale(1.05);
+}
+
+/* Produtos */
+.produtos {
+    padding: 50px 20px;
+    margin-top: 250px;
+    text-align: center;
+    
+}
+
+.produtos h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.produto-descricao{
+    margin-bottom: 60px;
+}
+.produto-descricao {
+    margin-top: 15px;
+}
+
+.produto-descricao h4 {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.produto-descricao p {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+.produto-descricao .btn-detalhes {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #d99837;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.produto-descricao .btn-detalhes:hover {
+    background-color: #b6792b;
+    transform: scale(1.1);
+}
+
+
+/* categoria dentro de produtos*/
+.categoria {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza os itens */
+    margin-bottom: 50px;
+    gap: 20px;
+}
+
+.categoria h3 {
+    font-size: 1.8rem;
+    margin-top: 200px;
+    color: #d99837;
+    display: flex;
+    align-items: center;
+  
+}
+
+.swiper-container {
+    width: 100%;
+    max-width: 800px; /* Define um limite máximo para o carrossel */
+    padding: 20px 0;
+}
+
+
+/* Ajuste específico para imagens grandes */
+.swiper-container.imagemProdutos img,
+.swiper-container.imagemPrpdutos img,
+.swiper-container.geral img {
+    max-width: 800px; /* Define um tamanho máximo maior */
+    width: 100%; /* Faz com que a imagem ocupe o espaço do contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    object-fit: contain; /* Evita distorção */
+    border-radius: 10px; /* Adiciona bordas arredondadas para design */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Adiciona efeito hover para imagens */
+.imagemProdutos img:hover,
+.swiper-container.imagemProdutos img:hover,
+.swiper-container.geral img:hover {
+    transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra */
+}
+
+/* Ajusta o swiper para as categorias de produtos */
+.swiper-container {
+    width: 100%;
+    max-width: 1000px; /* Define um limite maior para o swiper */
+    padding: 20px 0;
+}
+
+/* Swiper específico para iPhones */
+.swiper-container.tamanhoProdutos {
+    max-width: 900px; /* Ajuste personalizado para produtos */
+}
+
+/* Swiper específico para Smartphones */
+.swiper-container.geral {
+    max-width: 900px; /* Ajuste personalizado para Smartphones */
+}
+
+
+
+
+
+
+/* Estilização da seção de vantagens */
+.vantagens {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #222; /* Fundo para destacar a seção */
+    color: #fff;
+}
+
+/* Título da seção */
+.vantagens h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #d99837; /* Destaque para o título */
+}
+
+/* Grid das vantagens */
+.vantagens-grid {
+    display: flex; /* Exibe os itens em linha */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    align-items: flex-start; /* Alinha os itens no topo */
+    gap: 20px; /* Espaço entre as vantagens */
+    flex-wrap: wrap; /* Garante que os itens quebrem para outra linha em telas pequenas */
+    max-width: 1200px; /* Limita a largura total */
+    margin: 0 auto; /* Centraliza o grid */
+}
+
+/* Cada vantagem */
+.vantagem {
+    flex: 1; /* Faz com que as vantagens ocupem o mesmo espaço */
+    min-width: 250px; /* Define um tamanho mínimo para as vanta*/
+}
+
+
+/* Seção de Localização */
+.localizacao {
+    padding: 50px 20px;
+    text-align: center;
+    background-color:  #111;
+    background-image: url(imagens/fundo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; /* Centraliza a imagem */
+    background-attachment: fixed;
+}
+
+/* Título da Seção */
+.localizacao h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #d99837;
+}
+
+/* Subtítulo */
+.localizacao p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: #ccc;
+}
+
+/* Conteúdo da Localização */
+.localizacao-conteudo {
+    display: flex;
+    flex-direction: column; /* Coluna padrão para telas pequenas */
+    align-items: center;
+    gap: 30px;
+    margin: 0 auto;
+    max-width: 1200px; /* Limite de largura */
+}
+
+/* Estilo do iframe */
+.localizacao iframe {
+    border: none;
+    border-radius: 10px;
+    width: 100%; /* Adapta-se ao container */
+    max-width: 600px; /* Limite máximo para o mapa */
+    height: 350px;
+}
+
+/* Imagem da Loja */
+.imagem-loja img {
+    border-radius: 10px;
+    width: 100%; /* Adapta-se ao container */
+    max-width: 600px; /* Limite máximo para a imagem */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Sombra suave */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Efeito hover na imagem */
+.imagem-loja img:hover {
+    transform: scale(1.05); /* Efeito de zoom */
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsividade */
+
+
+/* Seção Fale Conosco */
+.contato {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #222; /* Fundo para destacar a seção */
+    color: #fff;
+}
+
+/* Título da Seção */
+.contato h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #d99837;
+}
+
+/* Subtítulo */
+.contato p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: #ccc;
+}
+
+/* Botões de Contato */
+.botoes-contato {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.botoes-contato a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 15px 30px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    color: #fff;
+}
+
+/* Botão Instagram */
+.btn-instagram {
+    background-color: #E1306C;
+}
+
+.btn-instagram:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 15px rgba(225, 48, 108, 0.5);
+}
+
+/* Botão WhatsApp */
+.btn-whatsapp {
+    background-color: #128C7E;
+}
+
+.btn-whatsapp:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 15px rgba(18, 140, 126, 0.5);
+}
+
+/* Botão WhatsApp Secundário */
+.btn-whatsapp-2 {
+    background-color: #128C7E;
+}
+
+.btn-whatsapp-2:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 15px rgba(18, 140, 126, 0.5);
+}
+
+/* Ícones */
+.botoes-contato i {
+    font-size: 1.5rem;
+}
+
+
+/* Rodapé */
+footer {
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Estilos para telas menores que 768px (tablets e celulares) */
+
+@media (min-width: 768px) {
+
+    body{
+        display: flex;
+        flex-direction: column;
+        gap: 0x;
+    }
+    
+
+  
+    .banner img {
+        max-width: 100%;
+        height: auto;
+        margin-top: 20px;
+    }
+
+    .banner-content {
+        padding: 10px;
+    }
+
+    .localizacao-conteudo {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .localizacao iframe,
+    .imagem-loja img {
+        max-width: 45%;
+    }
+
+    .botoes-contato {
+        max-width: 250px;
+        margin-left: auto;
+        margin-right: auto;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+        height: auto;
+    }
+
+    .logo{
+        width: 500px;
+    }
+
+    .logo img{
+        width: 500px;
+    }
+
+
+    .cta-whatsapp{
+        display: none;
+    }
+
+   
+
+nav ul {
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: #111;
+    padding: 20px;
+    transform: translateX(-100%);
+}
+
+nav ul.hidden {
+    transform: translateX(-100%);
+    display: none;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #d99837;
+}
+
+nav ul li a.active {
+    color: #d99837;
+    font-weight: bold;
+}
+
+#menu-toggle {
+    
+    display: flex;
+    font-size: 12px;
+    align-items: center;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    margin: 0;
+    color: white;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  nav ul.show {
+    transform: translateX(0);
+   }
+
+
+
+    .banner {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        margin-top: 25px;
+        
+    }
+
+    .banner img{
+        width: 100%;
+        margin-top: 10px ;
+    }
+
+    .banner h1 {
+        font-size: 2rem;
+    }
+
+    .banner p {
+        font-size: 1rem;
+    }
+
+
+
+    
+
+    .cta {
+        font-size: 0.9rem;
+    }
+    .produtos {
+        margin-top: 10px;
+        gap: 2px;
+    }
+
+    .produtos h1 {
+        font-size: 2rem;
+    }
+
+    .categoria {
+        flex-direction: column;
+        margin-bottom: 5px;
+        gap: 5px;
+    }
+    .categoria h3{
+        margin-top: 50px;
+    }
+
+    .vantagens-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .localizacao {
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .localizacao-conteudo {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    iframe,
+    .imagem-loja img {
+        max-width: 100%;
+    }
+
+    .botoes-contato {
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .botoes-contato a {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    header .logo img {
+        width: 80px;
+    }
+
+    nav ul {
+        gap: 10px;
+    }
+
+    .banner h1 {
+        font-size: 1.5rem;
+    }
+
+    .banner p {
+        font-size: 0.9rem;
+    }
+
+    .cta {
+        padding: 8px 16px;
+        font-size: 0.8rem;
+    }
+
+    .produtos h1 {
+        font-size: 1.5rem;
+    }
+
+    .categoria h3 {
+        font-size: 1.2rem;
+    }
+
+    .produto-descricao h4 {
+        font-size: 1.2rem;
+    }
+
+    .vantagens h2 {
+        font-size: 2rem;
+    }
+
+    iframe {
+        height: 250px;
+    }
+
+    .botoes-contato a {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
