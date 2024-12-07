@@ -612,7 +612,9 @@ nav ul li a.active {
     }
 
     .localizacao {
+
         background-attachment: fixed;
+        background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
     }

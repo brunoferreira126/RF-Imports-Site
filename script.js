@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-
+// Ativação dios links
 window.addEventListener('scroll', () => {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('nav ul li a');
@@ -74,4 +74,3 @@ btnDetalhes.forEach(button => {
 });
 
 
-// Botão telas menores
